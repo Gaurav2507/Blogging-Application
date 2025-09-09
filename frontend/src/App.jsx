@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Posts from "./pages/Posts";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div style={{ textAlign: "center", padding: "2rem" }}>
-      <h1>Blogging Application 📝</h1>
-      <p>Frontend running with React + Vite</p>
-      <button onClick={() => setCount(count + 1)}>Count: {count}</button>
+    <div>
+      <nav style={{ padding: "1rem", borderBottom: "1px solid #ddd" }}>
+        <Link to="/">Posts</Link> | <Link to="/login">Login</Link> |{" "}
+        <Link to="/register">Register</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Posts />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </div>
   );
 }

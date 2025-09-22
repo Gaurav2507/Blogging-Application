@@ -13,7 +13,8 @@ function Login() {
       localStorage.setItem("user", JSON.stringify(res.data));
       setMessage("Login successful ✅");
     } catch (err) {
-      setMessage(err.response?.data?.message || "Login failed ❌");
+      setMessage(err?.response?.data?.message || "Login failed ❌");
+      console.log(err);
     }
   };
 

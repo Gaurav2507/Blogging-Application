@@ -9,5 +9,6 @@ API.interceptors.request.use((req) => {
   if (user) {
     req.headers.Authorization = `Bearer ${JSON.parse(user).token}`;
   }
+  return req;
 });
 export default API;

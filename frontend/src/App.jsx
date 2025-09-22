@@ -6,7 +6,10 @@ import Posts from "./pages/Posts";
 function App() {
   return (
     <div>
-      <nav style={{ padding: "1rem", borderBottom: "1px solid #ddd" }}>
+      <nav
+        style={{ padding: "1rem", borderBottom: "1px solid #ddd" }}
+        className="bg-blue-500"
+      >
         <Link to="/">Posts</Link> | <Link to="/login">Login</Link> |{" "}
         <Link to="/register">Register</Link>
       </nav>
